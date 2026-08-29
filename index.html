@@ -150,29 +150,21 @@
     <script src="js/theme-picker.js"></script>
     <script src="js/navigation.js"></script>
     <script src="js/discord.js"></script>
-    <script src="js/view-counter.js"></script>
-
+    
     <div class="view-counter" id="view-counter">
-    <i class="fa-solid fa-eye"></i>
-    <span id="view-count">...</span>
+        <i class="fa-solid fa-eye"></i>
+        <span id="view-count">...</span>
     </div>
-
+    
     <script
-    data-goatcounter="https://huybelcutedz.goatcounter.com/count"
-    async
-    src="//gc.zgo.at/count.js">
+        data-goatcounter="https://huybelcutedz.goatcounter.com/count"
+        async
+        src="https://gc.zgo.at/count.js">
     </script>
     
-    <script>
-        var t = setInterval(function() {
-            if (window.goatcounter && window.goatcounter.visit_count) {
-                clearInterval(t);
+    <script src="js/view-counter.js"></script>
     
-                window.goatcounter.visit_count({
-                    append: '#view-count'
-                });
-            }
-        }, 100);
-    </script>
+    </body>
+    </html>
 </body>
 </html>
