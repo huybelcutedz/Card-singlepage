@@ -155,6 +155,23 @@
     <div class="view-counter" id="view-counter">
     <i class="fa-solid fa-eye"></i>
     <span id="view-count">...</span>
-</div>
+    </div>
+
+    <script>
+    var t = setInterval(function() {
+        if (window.goatcounter && window.goatcounter.visit_count) {
+            clearInterval(t);
+            window.goatcounter.visit_count({
+                append: '#view-count'
+                });
+            }
+        }, 100);
+    </script>
+    
+    <script
+        data-goatcounter="https://huybelcutedz.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js">
+    </script>
 </body>
 </html>
