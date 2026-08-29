@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link href="css/base.css" rel="stylesheet">
+    <link href="css/layout.css" rel="stylesheet">
+    <link href="css/components.css" rel="stylesheet">
+    <link href="css/music-player.css" rel="stylesheet">
+    <link href="css/responsive.css" rel="stylesheet">
+    <title>Nguyen Quang Huy | Homepage</title>
+</head>
+<body>
+    <div class="theme-picker" aria-label="Choose theme">
+        <button class="theme-option active" data-color="#64ffda" data-color-light="#64ffda" style="--theme-start:#64ffda;--theme-end:#64ffda" aria-label="Default theme" title="Default"></button>
+        <button class="theme-option" data-color="#aa3b3b" data-color-light="#ff4848" style="--theme-start:#aa3b3b;--theme-end:#ff4848" aria-label="Red theme" title="Red"></button>
+        <button class="theme-option" data-color="#d4843d" data-color-light="#ffde90" style="--theme-start:#d4843d;--theme-end:#ffde90" aria-label="Orange theme" title="Orange"></button>
+        <button class="theme-option" data-color="#369876" data-color-light="#71ff9e" style="--theme-start:#369876;--theme-end:#71ff9e" aria-label="Green theme" title="Green"></button>
+        <button class="theme-option" data-color="#4cadd0" data-color-light="#b2f9ff" style="--theme-start:#4cadd0;--theme-end:#b2f9ff" aria-label="Cyan theme" title="Cyan"></button>
+        <button class="theme-option" data-color="#9e6bff" data-color-light="#9fc1ff" style="--theme-start:#9e6bff;--theme-end:#9fc1ff" aria-label="Purple theme" title="Purple"></button>
+        <button class="theme-option" data-color="#ff5dd6" data-color-light="#ff9cbf" style="--theme-start:#ff5dd6;--theme-end:#ff9cbf" aria-label="Pink theme" title="Pink"></button>
+    </div>
+
+    <div class="cursor-glow"></div>
+
+    <aside class="site-nav">
+        <div class="nav-inner">
+            <p class="nav-eyebrow">Personal website</p>
+            <div class="brand-row">
+                <a class="brand" href="#about" data-section="about">Huy<span>.</span></a>
+                <div class="nav-avatar">
+                    <img src="cat.jpeg" alt="Cat">
+                </div>
+            </div>
+            <p class="sidebar-tagline">IT student at UET. Building things and learning how computers work.</p>
+
+            <nav aria-label="Primary navigation">
+                <ul class="horizontal-flex">
+                    <li><a class="active" href="#about" data-section="about"><span class="tab-number">01.</span> About</a></li>
+                    <li><a href="#education" data-section="education"><span class="tab-number">02.</span> Education</a></li>
+                    <li><a href="#experience" data-section="experience"><span class="tab-number">03.</span> Experience</a></li>
+                    <li><a href="#skills" data-section="skills"><span class="tab-number">04.</span> Skills</a></li>
+                </ul>
+            </nav>
+
+            <div class="social-links" aria-label="Social links">
+                <a href="mailto:huy36529@gmail.com" class="social-link" aria-label="Send me an email" title="Email"><i class="fa-solid fa-envelope"></i></a>
+                <a href="https://github.com/huybelcutedz" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="GitHub" title="GitHub"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.facebook.com/iwz8403" class="social-link" target="_blank" rel="noopener noreferrer" aria-label="Facebook" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <div class="discord-wrapper">
+                    <button type="button" class="social-link discord-link" aria-label="Copy Discord username" title="Click to copy Discord username">
+                        <i class="fa-brands fa-discord"></i>
+                    </button>
+                    <div class="discord-card">
+                        <div class="discord-card-title"><i class="fa-brands fa-discord"></i> Discord</div>
+                        <div class="discord-username">username: <span id="discord-username">shkrelieffron019</span></div>
+                        <div class="discord-copy-hint">Click to copy</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <div class="music-player">
+        <audio id="bg-audio" preload="metadata"></audio>
+        <div class="music-player__volume">
+            <button id="mp-volume-btn" class="music-player__btn" type="button" aria-label="Mute"><i class="fa-solid fa-volume-low"></i></button>
+            <input id="mp-volume" class="music-player__volume-bar" type="range" min="0" max="1" value="0.25" step="0.01" aria-label="Volume">
+        </div>
+        <div class="music-player__left">
+            <div class="music-player__controls">
+                <button id="mp-prev" class="music-player__btn" type="button" aria-label="Previous track"><i class="fa-solid fa-backward-step"></i></button>
+                <button id="mp-play" class="music-player__btn music-player__btn--play" type="button" aria-label="Play"><i class="fa-solid fa-play"></i></button>
+                <button id="mp-next" class="music-player__btn" type="button" aria-label="Next track"><i class="fa-solid fa-forward-step"></i></button>
+            </div>
+            <div class="music-player__meta">
+                <span class="music-player__label">Now playing:</span>
+                <span id="mp-title" class="music-player__title">Enchanting Stranger - Forza Horizon 6</span>
+            </div>
+        </div>
+        <div class="music-player__progress-row">
+            <span id="mp-current" class="music-player__time">0:00</span>
+            <input id="mp-bar" class="music-player__bar" type="range" min="0" value="0" step="0.1" aria-label="Track progress">
+            <span id="mp-duration" class="music-player__time">0:00</span>
+        </div>
+    </div>
+
+    <main class="page-shell">
+        <section class="content-section is-active" id="about" data-page-title="Homepage">
+            <p class="page-kicker"><span class="tab-index">01.</span> About</p>
+            <h1>Nguyen Quang Huy</h1>
+            <div class="profile-meta">
+                <span><i class="fa-solid fa-cake-candles"></i> 18 Sep 2008</span>
+                <span><i class="fa-solid fa-graduation-cap"></i> UET</span>
+                <span><i class="fa-solid fa-location-dot"></i> Vietnam</span>
+            </div>
+            <p>IT student at UET. I enjoy programming, learning how computers work, and building small projects while exploring Linux and web development.</p>
+            <p>I am currently studying Information Technology and developing my programming foundations through CS50x and personal projects.</p>
+            <a class="primary-button" href="#experience" data-section="experience">View experience <i class="fa-solid fa-arrow-right"></i></a>
+        </section>
+
+        <section class="content-section" id="education" data-page-title="Education" hidden>
+            <p class="page-kicker"><span class="tab-index">02.</span> Education</p>
+            <h1>Education</h1>
+            <div class="education-item">
+                <h2>University: The University of Engineering and Technology (UET)</h2>
+                <p>Major: Information Technology</p>
+                <p>Year: 2026 - Present</p>
+                <h3>About the university</h3>
+                <p>UET is one of the leading universities in Vietnam. It provides high-quality education and training in technology and engineering.</p>
+                <h3>About My Major</h3>
+                <p>Information Technology focuses on computers, software, and digital systems. Students learn programming and develop useful technology solutions.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="experience" data-page-title="Experience" hidden>
+            <p class="page-kicker"><span class="tab-index">03.</span> Experience</p>
+            <h1>Work Experience</h1>
+            <div class="experience-item">
+                <h2>Self-taught Programming: CS50x</h2>
+                <p>Time: 2026 - Present</p>
+                <p>Completing Harvard's CS50x, an introduction to computer science covering C, Python, SQL, and web development. Built projects including command-line tools, algorithms, and this website.</p>
+            </div>
+            <div class="youtube-video">
+                <iframe src="https://www.youtube.com/embed/SlqjA04_dpk?si=4uXAxMzKjnLf7R8n" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            </div>
+            <div class="experience-item">
+                <h2>Personal Project: EasyRedstone (Minecraft Mod)</h2>
+                <p>Time: 2026 - Present</p>
+                <p>Developed a Fabric mod for Minecraft using Java, focusing on redstone mechanics. Learned about build tools, debugging runtime errors, and working with the Fabric modding framework.</p>
+            </div>
+        </section>
+
+        <section class="content-section" id="skills" data-page-title="Skills" hidden>
+            <p class="page-kicker"><span class="tab-index">04.</span> Skills</p>
+            <h1>Skills</h1>
+            <ul>
+                <li>C (via CS50x coursework)</li>
+                <li>SQL (basics)</li>
+                <li>HTML / CSS / Bootstrap</li>
+                <li>JavaScript (basics)</li>
+                <li>Linux / command line</li>
+            </ul>
+        </section>
+    </main>
+
+    <script src="js/cursor-glow.js"></script>
+    <script src="js/music-player.js"></script>
+    <script src="js/theme-picker.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="js/discord.js"></script>
+</body>
+</html>
