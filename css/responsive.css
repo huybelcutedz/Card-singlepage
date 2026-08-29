@@ -1,0 +1,56 @@
+@media (max-width: 1000px) {
+    .site-nav {
+        position: relative;
+        width: 100%;
+        max-width: none;
+        height: auto;
+        padding: 48px 28px 24px;
+    }
+    .nav-inner { height: auto; }
+    .horizontal-flex {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 3px 20px;
+        margin-top: 32px;
+    }
+    .horizontal-flex a { padding: 8px 0; }
+    .social-links { margin-top: 30px; padding-top: 0; }
+    .page-shell {
+        margin-left: 0;
+        width: 100%;
+        padding: 56px 28px 80px;
+    }
+}
+
+@media (max-width: 600px) {
+    .site-nav { padding: 34px 22px 20px; }
+    .brand { font-size: 2.15rem; }
+    .sidebar-tagline { font-size: .95rem; }
+    .horizontal-flex { gap: 2px 16px; margin-top: 26px; }
+    .horizontal-flex a { font-size: .72rem; }
+    .page-shell { padding: 44px 22px 140px; }
+    h1 { font-size: 2.35rem; }
+    .profile-avatar { width: 120px; height: 120px; }
+    .profile-meta { flex-direction: column; gap: 9px; }
+    #skills > ul { grid-template-columns: 1fr; }
+    .education-item,
+    .experience-item { padding: 20px 20px; }
+
+    .theme-picker {
+        right: 14px;
+        bottom: 14px;
+        gap: 8px;
+        padding: 8px 10px;
+    }
+
+    .theme-option {
+        width: 19px;
+        height: 19px;
+    }
+}
+
+@media (max-width: 600px) {
+    .brand-row { gap: 14px; }
+    .nav-avatar img { width: 60px; height: 60px; }
+    .theme-picker { bottom: 92px; right: 10px; }
+}
