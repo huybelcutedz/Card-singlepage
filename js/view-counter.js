@@ -3,13 +3,19 @@
 
     if (!countEl) return;
 
-    const timer = setInterval(() => {
-        if (window.goatcounter && window.goatcounter.visit_count) {
-            clearInterval(timer);
+    fetch('https://huybelcutedz.goatcounter.com/counter//.json')
+        .then(response => {
+            if (!response.ok) {
+                throw new Error(`HTTP ${response.status}`);
+            }
 
-            window.goatcounter.visit_count({
-                append: '#view-count'
-            });
-        }
-    }, 100);
+            return response.json();
+        })
+        .then(data => {
+            countEl.textContent = data.count || '0';
+        })
+        .catch(error => {
+            console.error('View counter:', error);
+            countEl.textContent = '0';
+        });
 })();
