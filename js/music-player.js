@@ -20,7 +20,7 @@
     if (!audio || !playBtn || !bar || !titleEl) return;
 
     let index = 1;
-    let lastVolume = 0.25;
+    let lastVolume = 0.8;
     let started = false;
 
     function formatTime(sec) {
@@ -88,8 +88,8 @@
     audio.addEventListener('pause', updatePlayIcon);
 
     if (volumeBar) {
-        audio.volume = 0.25;
-        volumeBar.value = 0.25;
+        audio.volume = 0.8;
+        volumeBar.value = 0.8;
         volumeBar.addEventListener('input', () => {
             audio.muted = false;
             audio.volume = Number(volumeBar.value);
@@ -102,7 +102,7 @@
     volumeBtn?.addEventListener('click', () => {
         if (audio.muted || audio.volume === 0) {
             audio.muted = false;
-            audio.volume = lastVolume || 0.25;
+            audio.volume = lastVolume || 0.8;
             if (volumeBar) volumeBar.value = audio.volume;
         } else {
             lastVolume = audio.volume;
