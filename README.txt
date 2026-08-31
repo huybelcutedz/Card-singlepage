@@ -1,1 +1,1 @@
-Single-page version of the personal website.
+Inspired by Brittany Chiang.
